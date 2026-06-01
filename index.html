@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,89 +10,210 @@
             margin:0;
             padding:0;
             box-sizing:border-box;
-            font-family: Arial, sans-serif;
+            font-family:'Segoe UI',sans-serif;
         }
-
+        
         body{
-            background:#f5f7fa;
-            color:#333;
+            background:#f4f1fb;
+            color:#2d1b4e;
             line-height:1.6;
         }
-
+        
+        /* HEADER */
+        
         header{
-            background:#1f2937;
+            background:linear-gradient(135deg,#5b21b6,#7c3aed);
             color:white;
             text-align:center;
-            padding:50px 20px;
+            padding:80px 20px;
         }
-
+        
         header h1{
-            font-size:2.5rem;
+            font-size:3rem;
         }
-
+        
         header p{
             margin-top:10px;
-            font-size:1.1rem;
+            opacity:.9;
         }
-
+        
+        /* MAIN */
+        
         .container{
             width:90%;
-            max-width:1000px;
+            max-width:1200px;
             margin:auto;
-            padding:30px 0;
+            padding:40px 0;
         }
-
+        
+        /* SECTION */
+        
         section{
             background:white;
-            padding:25px;
-            margin-bottom:20px;
-            border-radius:10px;
-            box-shadow:0 2px 8px rgba(0,0,0,0.08);
-        }
-
-        h2{
-            color:#1f2937;
-            margin-bottom:15px;
-            border-bottom:2px solid #e5e7eb;
-            padding-bottom:8px;
-        }
-
-        ul{
-            margin-left:20px;
-        }
-
-        .skills{
-            display:flex;
-            gap:40px;
-            flex-wrap:wrap;
-        }
-
-        .project{
+            border-radius:15px;
+            padding:30px;
             margin-bottom:25px;
+            box-shadow:0 5px 20px rgba(91,33,182,.08);
+            transition:.3s;
         }
-
-        .project h3{
-            color:#111827;
+        
+        section:hover{
+            transform:translateY(-5px);
         }
-
-        a{
-            color:#2563eb;
-            text-decoration:none;
+        
+        h2{
+            color:#5b21b6;
+            margin-bottom:20px;
+            border-left:5px solid #7c3aed;
+            padding-left:12px;
         }
-
-        a:hover{
-            text-decoration:underline;
+        
+        /* ABOUT */
+        
+        .about{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:30px;
         }
-
-        .contact p{
+        
+        .about p{
+            text-align:justify;
+        }
+        
+        /* SKILLS */
+        
+        .skills{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:20px;
+        }
+        
+        .skill-card{
+            background:#faf7ff;
+            border:1px solid #e9ddff;
+            padding:20px;
+            border-radius:12px;
+            transition:.3s;
+        }
+        
+        .skill-card:hover{
+            background:#7c3aed;
+            color:white;
+            transform:scale(1.03);
+        }
+        
+        .skill-card h3{
             margin-bottom:10px;
         }
-
-        footer{
-            text-align:center;
-            padding:20px;
-            background:#1f2937;
+        
+        /* PROJECTS */
+        
+        .projects-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+            gap:25px;
+        }
+        
+        .project{
+            border-radius:15px;
+            padding:25px;
+            background:white;
+            border:1px solid #ece6ff;
+            transition:.3s;
+        }
+        
+        .project:hover{
+            transform:translateY(-8px);
+            box-shadow:0 10px 25px rgba(124,58,237,.15);
+        }
+        
+        .project h3{
+            color:#5b21b6;
+            margin-bottom:10px;
+        }
+        
+        .project ul{
+            margin-top:10px;
+            margin-left:20px;
+        }
+        
+        /* BUTTONS */
+        
+        .btn{
+            display:inline-block;
+            margin-top:15px;
+            background:#7c3aed;
             color:white;
+            text-decoration:none;
+            padding:10px 18px;
+            border-radius:8px;
+            transition:.3s;
+        }
+        
+        .btn:hover{
+            background:#5b21b6;
+            transform:translateY(-2px);
+        }
+        
+        /* CAREER */
+        
+        .goals{
+            columns:2;
+        }
+        
+        .goals li{
+            margin-bottom:10px;
+        }
+        
+        /* CONTACT */
+        
+        .contact-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:20px;
+        }
+        
+        .contact-card{
+            background:#faf7ff;
+            padding:20px;
+            border-radius:12px;
+            transition:.3s;
+        }
+        
+        .contact-card:hover{
+            background:#7c3aed;
+            color:white;
+        }
+        
+        .contact-card a{
+            color:inherit;
+            text-decoration:none;
+        }
+        
+        /* FOOTER */
+        
+        footer{
+            background:#2d1b4e;
+            color:white;
+            text-align:center;
+            padding:25px;
+        }
+        
+        /* RESPONSIVE */
+        
+        @media(max-width:768px){
+        
+            .about{
+                grid-template-columns:1fr;
+            }
+        
+            .goals{
+                columns:1;
+            }
+        
+            header h1{
+                font-size:2.2rem;
+            }
         }
     </style>
 </head>
@@ -107,34 +227,50 @@
 
     <div class="container">
 
+        <!-- ABOUT -->
+
         <section>
             <h2>About Me</h2>
-            <p>
-                I am a 2nd year Bachelor of Science in Information Technology (BSIT)
-                student at Davao del Norte State College, with a strong focus on backend
-                development and system logic design.
-            </p>
-            <br>
-            <p>
-                I specialize in backend development, including system development,
-                database management, and logic building. I also have a basic
-                background in frontend development.
-            </p>
-            <br>
-            <p>
-                I enjoy coding, building systems, and solving analytical and logical
-                problems. I am passionate about learning new technologies, designing
-                system logic, and taking on challenging topics in Information Technology.
-            </p>
+
+            <div class="about">
+
+                <div>
+                    <p>
+                        I am a 2nd year Bachelor of Science in Information Technology (BSIT)
+                        student at Davao del Norte State College, with a strong focus on
+                        backend development and system logic design.
+                    </p>
+                </div>
+
+                <div>
+                    <p>
+                        I specialize in backend development, including system development,
+                        database management, and logic building. I also have a basic
+                        background in frontend development.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        I enjoy coding, building systems, and solving analytical and
+                        logical problems. I am passionate about learning new technologies,
+                        designing system logic, and taking on challenging topics in
+                        Information Technology.
+                    </p>
+                </div>
+
+            </div>
         </section>
+
+        <!-- SKILLS -->
 
         <section>
             <h2>Skills</h2>
 
             <div class="skills">
 
-                <div>
-                    <h3>Backend Development</h3>
+                <div class="skill-card">
+                    <h3>⚙ Backend Development</h3>
                     <ul>
                         <li>Java</li>
                         <li>PHP</li>
@@ -144,7 +280,7 @@
                     </ul>
                 </div>
 
-                <div>
+                <div class="skill-card">
                     <h3>Frontend Development</h3>
                     <ul>
                         <li>HTML5</li>
@@ -156,86 +292,109 @@
             </div>
         </section>
 
+        <!-- PROJECTS -->
+
         <section>
             <h2>Projects</h2>
 
-            <div class="project">
-                <h3>🌱 Green Horizon</h3>
-                <p><strong>Community-Driven Environmental Engagement Platform</strong></p>
+            <div class="projects-grid">
 
-                <p>
-                    Green Horizon is a web-based platform that promotes environmental
-                    awareness and sustainable living through daily eco-friendly
-                    challenges, community interaction, environmental quizzes,
-                    and a gamified reward system.
-                </p>
+                <div class="project">
+                    <h3>Green Horizon</h3>
 
-                <br>
+                    <p>
+                        <strong>Community-Driven Environmental Engagement Platform</strong>
+                    </p>
 
-                <strong>Key Features:</strong>
-                <ul>
-                    <li>Daily environmental challenges</li>
-                    <li>Community posts with image uploads</li>
-                    <li>Likes and community engagement</li>
-                    <li>Environmental quizzes</li>
-                    <li>Points and rewards system</li>
-                    <li>User achievements and progress tracking</li>
-                </ul>
+                    <br>
 
-                <br>
+                    <p>
+                        Green Horizon is a web-based platform that promotes environmental
+                        awareness and sustainable living through daily eco-friendly
+                        challenges, community interaction, environmental quizzes,
+                        and a gamified reward system.
+                    </p>
 
-                <a href="https://github.com/NeriePerez/PROJECTS-GREEN_HORIZON" target="_blank">
-                    View Repository
-                </a>
+                    <br>
+
+                    <strong>Key Features:</strong>
+
+                    <ul>
+                        <li>Daily environmental challenges</li>
+                        <li>Community posts with image uploads</li>
+                        <li>Likes and community engagement</li>
+                        <li>Environmental quizzes</li>
+                        <li>Points and rewards system</li>
+                        <li>User achievements and progress tracking</li>
+                    </ul>
+
+                    <a href="https://github.com/NeriePerez/PROJECTS-GREEN_HORIZON"
+                       target="_blank"
+                       class="btn">
+                        View Repository
+                    </a>
+                </div>
+
+                <div class="project">
+                    <h3>TallyTrack</h3>
+
+                    <p>
+                        <strong>Smart Inventory Management System for Small Retail Businesses</strong>
+                    </p>
+
+                    <br>
+
+                    <p>
+                        TallyTrack is a web-based inventory management system designed
+                        to help small retail businesses efficiently manage products,
+                        inventory levels, stock movements, and transaction records.
+                    </p>
+
+                    <br>
+
+                    <strong>Key Features:</strong>
+
+                    <ul>
+                        <li>Product and category management</li>
+                        <li>Stock-in and stock-out transactions</li>
+                        <li>Inventory monitoring</li>
+                        <li>Transaction and activity logs</li>
+                        <li>Low-stock alerts</li>
+                        <li>Automated graphs and analytics dashboard</li>
+                    </ul>
+
+                    <a href="https://github.com/NeriePerez/PROECTS-TALLYTRACK"
+                       target="_blank"
+                       class="btn">
+                        View Repository
+                    </a>
+                </div>
+
+                <div class="project">
+                    <h3>Other Java Projects</h3>
+
+                    <p>
+                        Collection of Java-based projects focused on
+                        system development, programming fundamentals,
+                        object-oriented programming, and application design.
+                    </p>
+
+                    <a href="https://github.com/NeriePerez/PROECTS-JAVA"
+                       target="_blank"
+                       class="btn">
+                        View Repository
+                    </a>
+                </div>
+
             </div>
-
-            <hr><br>
-
-            <div class="project">
-                <h3>📦 TallyTrack</h3>
-                <p><strong>Smart Inventory Management System for Small Retail Businesses</strong></p>
-
-                <p>
-                    TallyTrack is a web-based inventory management system designed
-                    to help small retail businesses efficiently manage products,
-                    inventory levels, stock movements, and transaction records.
-                </p>
-
-                <br>
-
-                <strong>Key Features:</strong>
-                <ul>
-                    <li>Product and category management</li>
-                    <li>Stock-in and stock-out transactions</li>
-                    <li>Inventory monitoring</li>
-                    <li>Transaction and activity logs</li>
-                    <li>Low-stock alerts</li>
-                    <li>Automated graphs and analytics dashboard</li>
-                </ul>
-
-                <br>
-
-                <a href="https://github.com/NeriePerez/PROECTS-TALLYTRACK" target="_blank">
-                    View Repository
-                </a>
-            </div>
-
-            <hr><br>
-
-            <div class="project">
-                <h3>💻 Other Java Projects</h3>
-
-                <a href="https://github.com/NeriePerez/PROECTS-JAVA" target="_blank">
-                    View Repository
-                </a>
-            </div>
-
         </section>
+
+        <!-- CAREER GOALS -->
 
         <section>
             <h2>Career Goals</h2>
 
-            <ul>
+            <ul class="goals">
                 <li>Become a Full-Stack IT Developer</li>
                 <li>Improve design and backend development skills</li>
                 <li>Gain professional experience in the IT industry</li>
@@ -244,24 +403,42 @@
             </ul>
         </section>
 
-        <section class="contact">
+        <!-- CONTACT -->
+
+        <section>
             <h2>Contact Me</h2>
 
-            <p><strong>Email:</strong>
-                <a href="mailto:perez.nerieanne@dnscedu.onmicrosoft.com">
-                    perez.nerieanne@dnscedu.onmicrosoft.com
-                </a>
-            </p>
+            <div class="contact-grid">
 
-            <p><strong>Phone:</strong> +63 930 7601 638</p>
+                <div class="contact-card">
+                    <h3>Email</h3>
+                    <p>
+                        <a href="mailto:perez.nerieanne@dnscedu.onmicrosoft.com">
+                            perez.nerieanne@dnscedu.onmicrosoft.com
+                        </a>
+                    </p>
+                </div>
 
-            <p><strong>GitHub:</strong>
-                <a href="https://github.com/NeriePerez" target="_blank">
-                    github.com/NeriePerez
-                </a>
-            </p>
+                <div class="contact-card">
+                    <h3>Phone</h3>
+                    <p>+63 930 7601 638</p>
+                </div>
 
-            <p><strong>Location:</strong> Davao del Norte, Philippines</p>
+                <div class="contact-card">
+                    <h3>GitHub</h3>
+                    <p>
+                        <a href="https://github.com/NeriePerez" target="_blank">
+                            github.com/NeriePerez
+                        </a>
+                    </p>
+                </div>
+
+                <div class="contact-card">
+                    <h3>Location</h3>
+                    <p>Davao del Norte, Philippines</p>
+                </div>
+
+            </div>
         </section>
 
     </div>
@@ -272,4 +449,3 @@
 
 </body>
 </html>
-```
